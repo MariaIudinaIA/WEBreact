@@ -1,8 +1,29 @@
-# React + Vite
+**Что такое JSX и зачем он используется в React?**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+JSX (JavaScript XML) — это синтаксис, позволяющий писать HTML-подобный код в JavaScript. Он упрощает создание интерфейсов в React.
 
-Currently, two official plugins are available:
+**Чем функциональные компоненты отличаются от классовых?**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+_Функциональные компоненты_ — это обычные функции, принимающие props и возвращающие JSX.  
+_Классовые компоненты_ создаются через class и используют this.props. Сейчас чаще используются функциональные компоненты с хуками.  
+
+
+**Как передавать данные в компонент через props?**
+
+Данные передаются как атрибуты в JSX:
+
+<Article title="Заголовок" text="Текст статьи" />
+Внутри компонента они доступны через props.
+
+**В каком формате принимаются props в функциональном компоненте?**
+
+Props передаются в виде объекта:
+
+function Article({ title, text }) {
+  return <h2>{title}</h2>;
+}
+Или через props:
+
+function Article(props) {
+  return <h2>{props.title}</h2>;
+}
